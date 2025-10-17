@@ -13,8 +13,7 @@ scanning large-scale source code vulnerabilities. Inspired by existing DL-based 
 millions of images accurately, we prefer to use these techniques
 to accomplish our purpose. Specifically, we propose a novel idea
 that can efficiently convert the source code of a function into an
-image while preserving the program details. We implement VulCMS and evaluate it on a dataset of 13,687 vulnerable functions and
-26,970 non-vulnerable functions. Experimental results report that
+image while preserving the program details. We implemented VulCMS and tested it on SARD and VulMCI dataset. Experimental results report that
 VulCMS can achieve better accuracy than eight state-of-the-art vulnerability detectors (i.e., Checkmarx, FlawFinder, RATS, TokenCNN,
 VulDeePecker, SySeVR, VulDeeLocator, and Devign). As for scalability,
 VulCMS is about four times faster than VulDeePecker and SySeVR,
@@ -23,7 +22,7 @@ than Devign. Furthermore, we conduct a case study on more than 25 million lines 
 detect large-scale vulnerability. Through the scanning reports, we
 finally discover 73 vulnerabilities that are not reported in NVD.
 
-在本文中，我们的目标是实现可扩展性和准确性 扫描大规模源代码漏洞。灵感来自现有的基于 DL 的图像分类，该分类具有分析能力 数以百万计的图像，我们更喜欢使用这些技术 实现我们的目的。具体来说，我们提出了一个新的想法 可以有效地将函数的源代码转换为 图像，同时保留程序详细信息。我们实现了 VulCMS，并在 13,687 个易受攻击的函数和 26,970 个不易受攻击的函数。实验结果表明 VulCMS 可以达到比八种最先进的漏洞检测器（即 Checkmarx、FlawFinder、RATS、TokenCNN、 VulDeePecker、SySeVR、VulDeeLocator 和 Devign）。至于可扩展性， VulCMS 比 VulDeePecker 和 SySeVR 快四倍， 比 VulDeeLocator 快约 15 倍，快约 6 倍 比德维恩。此外，我们对超过 2500 万行代码进行了案例研究，结果表明 VulCMS 可以 检测大规模漏洞。通过扫描报告，我们 最后发现 NVD 中未报告的 73 个漏洞。
+在本文中，我们的目标是实现可扩展性和准确性扫描大规模源代码漏洞。灵感来自现有的基于 DL 的图像分类，该分类具有分析能力数以百万计的图像，我们更喜欢使用这些技术实现我们的目的。具体来说，我们提出了一个新的想法 可以有效地将函数的源代码转换为图像，同时保留程序详细信息。我们实现了 VulCMS，并在SARD和VulMCI数据集上进行测试。实验结果表明 VulCMS 可以达到比八种最先进的漏洞检测器（即 Checkmarx、FlawFinder、RATS、TokenCNN、 VulDeePecker、SySeVR、VulDeeLocator 和 Devign）。至于可扩展性，VulCMS 比 VulDeePecker 和 SySeVR 快四倍，比 VulDeeLocator 快约 15 倍，快约 6 倍 比德维恩。此外，我们对超过 2500 万行代码进行了案例研究，结果表明 VulCMS 可以检测大规模漏洞。通过扫描报告，我们最后发现 NVD 中未报告的 73 个漏洞。
 
 ## Design of VulCMS
  <img src="overview.png" width = "800" height = "300" alt="图片名称" align=center />
@@ -155,6 +154,7 @@ python generate_train_test_data.py -i ./data/sard/outputs -o ./data/sard/pkl -n 
 ```
 python VulCMS.py -i ./data/sard/pkl
 ```
+
 
 
 
