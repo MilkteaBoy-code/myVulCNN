@@ -87,9 +87,9 @@ Normalize the code with normalization.py (This operation will overwrite the data
 ```
 python ./normalization.py -i ./data/sard
 ```
-#### Step 2: Generate pdgs with the help of joern
+#### Step 2: Generate PDGs with the help of joern
 
-第 2 步：在 joern 的帮助下生成 pdg
+第 2 步：在 joern 的帮助下生成 PDG
 
 Prepare the environment refering to: [joern](https://github.com/joernio/joern) you can try the version between 1.1.995 to 1.1.1125
 
@@ -111,7 +111,7 @@ python joern_graph_gen.py  -i ./data/sard/bins/Vul -o ./data/sard/pdgs/No-Vul -t
 python joern_graph_gen.py  -i /mnt/f/Code/VulCMS/VulCMS/data/sard/bins/Vul -o /mnt/f/Code/VulCMS/VulCMS/data/sard/pdgs/Vul -t export -r pdg
 python joern_graph_gen.py  -i /mnt/f/Code/VulCMS/VulCMS/data/sard/bins/No-Vul -o /mnt/f/Code/VulCMS/VulCMS/data/sard/pdgs/No-Vul -t export -r pdg
 ```
-#### Step 3: Train a sent2vec model
+#### Step 3: Train a UniXcoder model
 
 步骤 3：训练 UniXcoder 模型
 
@@ -154,6 +154,7 @@ python generate_train_test_data.py -i ./data/sard/outputs -o ./data/sard/pkl -n 
 ```
 python VulCMS.py -i ./data/sard/pkl
 ```
+
 
 
 
